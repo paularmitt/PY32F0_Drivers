@@ -112,9 +112,11 @@ SECTIONS
   {
     . = ALIGN(4);
     _sdata = .;        /* create a global symbol at data start */
+    KEEP(*(.ramfunc))
+    KEEP(*(.ramfunc*))
+    . = ALIGN(4);
     *(.data)           /* .data sections */
     *(.data*)          /* .data* sections */
-
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */
   } >RAM AT> FLASH
