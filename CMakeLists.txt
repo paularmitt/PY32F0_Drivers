@@ -62,7 +62,7 @@ if(${ENABLE_STARTUP_FILE})
 endif()
 
 # ld_script
-if(${ENABLE_STARTUP_FILE})
+if(${ENABLE_LD_SCRIPT})
     set(LINKER_SCRIPT ${CMAKE_CURRENT_LIST_DIR}/LDScripts/${MCU_MODEL_LOWER}.ld)
     target_link_options(drivers INTERFACE -T ${LINKER_SCRIPT})
 endif()
